@@ -52,11 +52,11 @@ public class customer extends user{
         this.payments = payments;
     }
 
-        void Reorder(String orderID) {
+    void Reorder(String orderID) {
         for (Order order : orders) {
             if (orderID == order.getID()) {
                 orders.add(order);
-                System.out.println(" reorder "+ orderID+" is Done\n");
+                System.out.println(" reorder " + orderID + " is Done");
                 return;
             }
         }
