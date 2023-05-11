@@ -24,8 +24,11 @@ public class cart {
                 products.put(p, newQuantity);
             }
         }
+        else {
+            System.out.println("You don't have this product in your cart");
+        }
     }
-
+    
     public double calculateTotal() {
         double total = 0;
         for (Map.Entry<product, Integer> entry : products.entrySet()) {
