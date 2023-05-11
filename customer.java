@@ -28,6 +28,7 @@ public class customer extends user{
             Order order = new Order(mycart, address);
             orders.add(order);
             System.out.println("Items are being shipped & will arrive as soon as possible");
+            order.view();
             mycart.clear();
             return order;
         }
@@ -69,9 +70,6 @@ public class customer extends user{
         }
     }
 
-    public void show_an_order(Order o){
-        o.view();
-    }
 
     public void setPayments(Vector<Payment> payments) {
         this.payments = payments;
@@ -99,3 +97,4 @@ public class customer extends user{
     }
 
 }
+
