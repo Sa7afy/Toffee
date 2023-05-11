@@ -56,7 +56,7 @@ public class cart {
     public void view() {
         System.out.println("Cart:");
         for (Map.Entry<product, Integer> entry : products.entrySet()) {
-            System.out.println(entry.getKey().getProductName() + " x " + entry.getValue() + " @ $" + entry.getKey().getProductPrice() + " = $" + entry.getKey().getProductPrice() * entry.getValue());
+            System.out.println("Product ID:" +entry.getKey().getProductID() + "  ||  " + entry.getKey().getProductName() + " x " + entry.getValue() + " @ $" + entry.getKey().getProductPrice() + " = $" + entry.getKey().getProductPrice() * entry.getValue());
         }
         System.out.println("Total: $" + calculateTotal());
     }
