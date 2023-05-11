@@ -1,5 +1,6 @@
 import java.util.Objects;
 import java.util.Vector;
+
 public class Catalog {
     Vector<product> catalog;
 
@@ -15,19 +16,20 @@ public class Catalog {
         catalog.remove(p);
     }
 
-    public void search(String id){
+    public product search(int id) {
         for (int i = 0; i < catalog.size(); i++) {
-            if(Objects.equals(catalog.elementAt(i).ProductID, id)){
+            if (Objects.equals(catalog.elementAt(i).ProductID, id)) {
                 catalog.elementAt(i).view();
-                return;
+                return catalog.elementAt(i);
             }
         }
         System.out.println("Item not found");
+        return new product("NULL", 0, 0);
     }
     public void view(){
-            for (product p : catalog) {
-                p.view();
-            }
-        
+        for (product p : catalog) {
+            p.view();
+        }
+
     }
 }
