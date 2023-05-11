@@ -42,7 +42,7 @@ public class Order {
     }
 
     public void view() {
+        System.out.println("OrderID:" + ID );
         order_details.view();
-        System.out.println("OrderID:" + ID + "\nPrice:" + price + "\n");
     }
 }
