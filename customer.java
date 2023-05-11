@@ -35,6 +35,18 @@ public class customer extends user{
     public void setOrders(Vector<Order> orders) {
         this.orders = orders;
     }
+    
+    public void add_order(Order order){
+        this.orders.add(order);
+    }
+
+    public void delete(String orderID){
+        for (int i = 0; i < orders.size(); i++) {
+            if(Objects.equals(orders.elementAt(i).getID(), orderID)){
+                orders.remove(orders.elementAt(i));
+            }
+        }
+    }
 
     public void setPayments(Vector<Payment> payments) {
         this.payments = payments;
