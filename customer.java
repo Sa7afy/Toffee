@@ -1,4 +1,6 @@
+import javax.lang.model.type.NullType;
 import java.util.Objects;
+import java.util.Scanner;
 import java.util.Vector;
 
 public class customer extends user{
@@ -15,6 +17,24 @@ public class customer extends user{
         payments = new Vector<Payment>();
         orders = new Vector<Order>();
         mycart = new cart();
+    }
+
+    public Order check_out(){
+        if(!mycart.empty()) {
+            System.out.print("Please enter your address:");
+            Scanner add = new Scanner(System.in);
+            String address;
+            address = add.nextLine();
+            Order order = new Order(mycart, address);
+            orders.add(order);
+            System.out.println("Items are being shipped & will arrive as soon as possible");
+            mycart.clear();
+            return order;
+        }
+        else{
+            System.out.println("Your cart is empty.");
+        }
+        return null;
     }
 
     public void setMyCart(cart mycart) {
@@ -47,6 +67,10 @@ public class customer extends user{
                 orders.remove(orders.elementAt(i));
             }
         }
+    }
+
+    public void show_an_order(Order o){
+        o.view();
     }
 
     public void setPayments(Vector<Payment> payments) {
