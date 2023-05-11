@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Vector;
 
 public class customer extends user{
@@ -35,12 +36,12 @@ public class customer extends user{
     public void setOrders(Vector<Order> orders) {
         this.orders = orders;
     }
-    
+
     public void add_order(Order order){
         this.orders.add(order);
     }
 
-    public void delete(String orderID){
+    public void delete(int orderID){
         for (int i = 0; i < orders.size(); i++) {
             if(Objects.equals(orders.elementAt(i).getID(), orderID)){
                 orders.remove(orders.elementAt(i));
@@ -52,18 +53,15 @@ public class customer extends user{
         this.payments = payments;
     }
 
-    void Reorder(String orderID) {
+    void Reorder(int orderID) {
         for (Order order : orders) {
             if (orderID == order.getID()) {
-                orders.add(order);
-                System.out.println(" reorder " + orderID + " is Done");
-                return;
+                boolean can;
             }
         }
         System.out.println("Order Not Found");
     }
-
-        void getOrder(int orderID ) {
+    void getOrder(int orderID ) {
         for (Order order : orders) {
             if (orderID == order.getID()) {
                 order.view();
@@ -72,10 +70,8 @@ public class customer extends user{
         }
         System.out.println("Order Not Found");
     }
-    
     void ShowData() {
-        System.out.println("Name:" + this.FullName + "\nEmail:" + this.Email + "\nPhone:" + this.phone);
+        System.out.println("ID: "+this.ID+"\nName: " + this.FullName + "\nEmail: " + this.Email + "\nPhone " + this.phone);
     }
-
 
 }
