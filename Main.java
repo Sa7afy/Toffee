@@ -43,7 +43,7 @@ public class Main {
                     System.out.print("Enter Product ID: ");
                     int id = in2.nextInt();
                     product now = toffee.catalog.search(id);
-                    if (Objects.equals(now.ProductName, "NULL")) {
+                    if (now.ProductName != "NULL") {
                         System.out.print("Enter Amount: ");
                         int amount = in2.nextInt();
                         if (amount <= now.quantity) {
@@ -63,7 +63,8 @@ public class Main {
                 if (Objects.equals(toffee.curCustomer.Email, "1")) {
                     System.out.println("You must be logged in.");
                 } else {
-                    toffee.curCustomer.check_out();
+                    Order o;
+                    o = toffee.curCustomer.check_out();
                 }
             } else if (op == 4) {
                 toffee.curCustomer.mycart.clear();
@@ -86,6 +87,5 @@ public class Main {
         }
     }
 }
-
 
 
