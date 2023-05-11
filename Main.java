@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -57,7 +58,14 @@ public class Main {
                 toffee.curCustomer.mycart.view();
             }
             else if (op == 3){
-                
+                if(Objects.equals(toffee.curCustomer.Email, "1")){
+                    System.out.println("You must be logged in.");
+                }
+                else{
+                    Order o;
+                    o = toffee.curCustomer.check_out();
+                    toffee.curCustomer.show_an_order(o);
+                }
             }
             else if (op == 4) {
                 toffee.curCustomer.mycart.clear();
