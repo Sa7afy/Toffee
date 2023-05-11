@@ -2,10 +2,12 @@ public class Order {
     private String ID;
     private double price;
     private int order_status = 2, paid = 1, late = 0, pending = 2;
+    public cart order_details;
 
-    public Order(String ID, double price) {
+    public Order(String ID, double price, cart crt) {
         this.ID = ID;
         this.price = price;
+        order_details = crt;
     }
 
     public void setID(String ID) {
