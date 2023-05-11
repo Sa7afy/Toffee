@@ -15,20 +15,33 @@ public class cart {
         }
     }
 
-    public void remove(product p, int quantity) {
+
+
+    public int get_quantity(product p){
+        return products.get(p);
+    }
+
+    public int remove(product p, int quantity) {
         if (products.containsKey(p)) {
             int newQuantity = products.get(p) - quantity;
             if (newQuantity <= 0) {
                 products.remove(p);
+                return products.get(p);
             } else {
                 products.put(p, newQuantity);
+                return quantity;
             }
         }
         else {
             System.out.println("You don't have this product in your cart");
+            return 0;
         }
     }
-    
+
+    public boolean empty(){
+        return products.size() == 0;
+    }
+
     public double calculateTotal() {
         double total = 0;
         for (Map.Entry<product, Integer> entry : products.entrySet()) {
@@ -49,3 +62,4 @@ public class cart {
     }
 
 }
+
