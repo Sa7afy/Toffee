@@ -65,7 +65,6 @@ public class Main {
                 } else {
                     Order o;
                     o = toffee.curCustomer.check_out();
-                    toffee.curCustomer.show_an_order(o);
                 }
             } else if (op == 4) {
                 toffee.curCustomer.mycart.clear();
