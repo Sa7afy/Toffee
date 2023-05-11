@@ -8,11 +8,26 @@ import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The type Toffee.
+ */
 public class Toffee {
+    /**
+     * The Catalog of the system.
+     */
     Catalog catalog;
+    /**
+     * The Customers of the system.
+     */
     Vector<customer> customers;
+    /**
+     * The Current customer which did log in.
+     */
     customer curCustomer;
 
+    /**
+     * Instantiates a new Toffee system.
+     */
     Toffee() {
         catalog = new Catalog();
         customers = new Vector<customer>();
@@ -20,6 +35,9 @@ public class Toffee {
         curCustomer = new customer("1", "1", "1", "1");
     }
 
+    /**
+     * Read customers from the file.
+     */
     void ReadCustomers() {
         try {
             File myObj = new File("src/customer.txt");
@@ -49,6 +67,9 @@ public class Toffee {
         }
     }
 
+    /**
+     * Read products of the store from the file.
+     */
     void ReadProducts() {
 
         try {
@@ -76,6 +97,9 @@ public class Toffee {
         }
     }
 
+    /**
+     * Login.
+     */
     void login() {
         Scanner myObj = new Scanner(System.in);
         int ID, option;
@@ -116,6 +140,11 @@ public class Toffee {
         }
     }
 
+    /**
+     * Clearfile function.
+     *
+     * @param f the file name
+     */
     public void clearfile(String f){
         try {
             FileWriter fileWriter = new FileWriter(f, false);
@@ -126,6 +155,11 @@ public class Toffee {
         }
     }
 
+    /**
+     * Write to file.
+     *
+     * @param f the file name
+     */
     public void write_to_file(String f){
         try {
             FileWriter fileWriter = new FileWriter(f);
@@ -142,6 +176,12 @@ public class Toffee {
         }
     }
 
+    /**
+     * Is valid egyptian phone number boolean.
+     *
+     * @param phoneNumber the phone number
+     * @return the boolean
+     */
     public boolean isValidEgyptianPhoneNumber(String phoneNumber) {
         // Egypt phone number regex pattern
         String regex = "^01[0-2]\\d{8}$";
@@ -156,6 +196,12 @@ public class Toffee {
         return matcher.matches();
     }
 
+    /**
+     * Is valid email boolean.
+     *
+     * @param email the email
+     * @return the boolean
+     */
     public boolean isValidEmail(String email) {
         // Email regex pattern
         String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
@@ -170,6 +216,9 @@ public class Toffee {
         return matcher.matches();
     }
 
+    /**
+     * Register.
+     */
     public void register() {
         String FullName = new String(), Email = new String(), PhoneNumber = new String(), Pw = new String();
         Scanner name = new Scanner(System.in);
