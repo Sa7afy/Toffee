@@ -4,15 +4,15 @@ import java.util.Vector;
 public class Catalog {
     Vector<product> catalog;
 
-    public Catalog(){
+    public Catalog() {
         catalog = new Vector<product>();
     }
 
-    public void add(product p){
+    public void add(product p) {
         catalog.add(p);
     }
 
-    public void delete(product p){
+    public void delete(product p) {
         catalog.remove(p);
     }
 
@@ -26,10 +26,12 @@ public class Catalog {
         System.out.println("Item not found");
         return new product("NULL", 0, 0);
     }
-    public void view(){
+
+    public void view() {
         for (product p : catalog) {
             p.view();
         }
 
     }
 }
+
