@@ -1,6 +1,15 @@
 import java.util.Objects;
 import java.util.Scanner;
+
+/**
+ * The type Main.
+ */
 public class Main {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         Toffee toffee = new Toffee();
         toffee.ReadProducts();
@@ -63,8 +72,7 @@ public class Main {
                 if (Objects.equals(toffee.curCustomer.Email, "1")) {
                     System.out.println("You must be logged in.");
                 } else {
-                    Order o;
-                    o = toffee.curCustomer.check_out();
+                    toffee.curCustomer.check_out();
                 }
             } else if (op == 4) {
                 toffee.curCustomer.mycart.clear();
