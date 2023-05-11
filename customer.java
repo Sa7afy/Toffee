@@ -64,7 +64,8 @@ public class customer extends user{
     }
 
     void ShowData() {
-        System.out.println("Name: " + this.FullName + " Email: " + this.Email + " Phone " + this.phone);
+        System.out.println("Name: " + this.FullName + "\nEmail: " + this.Email + "\nPhone " + this.phone);
     }
+
 
 }
