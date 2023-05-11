@@ -70,8 +70,10 @@ public class Main {
             else if (op == 4) {
                 toffee.curCustomer.mycart.clear();
             }
+            else if (op == 5){
+
+            }
             else break;
         }
     }
 }
-
