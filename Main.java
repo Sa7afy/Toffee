@@ -26,7 +26,7 @@ public class Main {
         while (true){
             Scanner in2 = new Scanner(System.in);
             System.out.println("what do you want to do now...?");
-            System.out.println("1-Browse catalog\n2-show Cart\n3-checkout cart\n4-exit");
+            System.out.println("1-Browse catalog\n2-show Cart\n3-checkout cart\n4-clear cart\n5-exit");
             int op = in2.nextInt();
             if (op ==1){
                 toffee.catalog.view();
@@ -56,7 +56,14 @@ public class Main {
             else if (op == 2){
                 toffee.curCustomer.mycart.view();
             }
+            else if (op == 3){
+                
+            }
+            else if (op == 4) {
+                toffee.curCustomer.mycart.clear();
+            }
             else break;
         }
     }
 }
+
