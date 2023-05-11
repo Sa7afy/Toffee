@@ -25,8 +25,9 @@ public class cart {
         if (products.containsKey(p)) {
             int newQuantity = products.get(p) - quantity;
             if (newQuantity <= 0) {
+                int will_be_added = products.get(p);
                 products.remove(p);
-                return products.get(p);
+                return will_be_added;
             } else {
                 products.put(p, newQuantity);
                 return quantity;
