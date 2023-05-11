@@ -1,10 +1,11 @@
 public class product {
-    int ProductID, ProductPrice, quantity;
-
+    int ProductID, quantity;
+    double ProductPrice;
+    static int productIdCount =0;
     String ProductName;
 
-    product(int id, String name, int price, int amount) {
-        this.ProductID = id;
+    product(String name, double price, int amount) {
+        this.ProductID = ++productIdCount;
         this.ProductName = name;
         this.ProductPrice = price;
         this.quantity = amount;
@@ -30,7 +31,7 @@ public class product {
         return ProductID;
     }
 
-    public int getProductPrice() {
+    public double getProductPrice() {
         return ProductPrice;
     }
 
@@ -47,3 +48,4 @@ public class product {
     }
 
 }
+
