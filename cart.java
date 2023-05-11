@@ -7,11 +7,11 @@ public class cart {
         products = new HashMap<product, Integer>();
     }
 
-    public void add(product product, int quantity) {
-        if (products.containsKey(product)) {
-            products.put(product, products.get(product) + quantity);
+    public void add(product p, int quantity) {
+        if (products.containsKey(p)) {
+            products.put(p, products.get(p) + quantity);
         } else {
-            products.put(product, quantity);
+            products.put(p, quantity);
         }
     }
 
