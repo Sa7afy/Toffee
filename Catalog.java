@@ -19,7 +19,6 @@ public class Catalog {
     public product search(int id) {
         for (int i = 0; i < catalog.size(); i++) {
             if (Objects.equals(catalog.elementAt(i).ProductID, id)) {
-                catalog.elementAt(i).view();
                 return catalog.elementAt(i);
             }
         }
@@ -34,4 +33,5 @@ public class Catalog {
 
     }
 }
+
 
