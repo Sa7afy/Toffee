@@ -22,7 +22,7 @@ public class Toffee {
 
     void ReadCustomers() {
         try {
-            File myObj = new File("src/customers.txt");
+            File myObj = new File("src/customer.txt");
             Scanner myReader = new Scanner(myObj);
             int ind = 1;
             String name = new String(), email = new String(), phone = new String(), pass = new String();
@@ -38,7 +38,6 @@ public class Toffee {
                     pass = data;
                     customer cus = new customer(name, email, phone, pass);
                     customers.add(cus);
-                    cus.ShowData();
                 }
 
                 ind++;
@@ -171,19 +170,18 @@ public class Toffee {
         return matcher.matches();
     }
 
-    public void register(){
+    public void register() {
         String FullName = new String(), Email = new String(), PhoneNumber = new String(), Pw = new String();
         Scanner name = new Scanner(System.in);
         System.out.print("Full name:");
         FullName = name.nextLine();
-        while(true){
+        while (true) {
             Scanner email = new Scanner(System.in);
             System.out.print("Email:");
             Email = email.nextLine();
-            if(isValidEmail(Email)){
+            if (isValidEmail(Email)) {
                 break;
-            }
-            else{
+            } else {
                 int option;
                 Scanner myObj = new Scanner(System.in);
                 System.out.println("Wrong email format, click 1 to try again");
@@ -194,14 +192,13 @@ public class Toffee {
                 }
             }
         }
-        while(true){
+        while (true) {
             Scanner phone = new Scanner(System.in);
             System.out.print("Phone number:");
             PhoneNumber = phone.nextLine();
-            if(isValidEgyptianPhoneNumber(PhoneNumber)){
+            if (isValidEgyptianPhoneNumber(PhoneNumber)) {
                 break;
-            }
-            else{
+            } else {
                 int option;
                 Scanner myObj = new Scanner(System.in);
                 System.out.println("Wrong phone number format, click 1 to try again");
@@ -218,17 +215,11 @@ public class Toffee {
 
         customer c = new customer(FullName, Email, PhoneNumber, Pw);
         customers.add(c);
-
         String file = "src/customer.txt";
         clearfile(file);
         write_to_file(file);
+        System.out.println("registered successfully");
     }
 
-    public void showcustomers(){
-        for(customer cu:customers){
-            cu.ShowData();
-        }
-    }
 }
-
 
