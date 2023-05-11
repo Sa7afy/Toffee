@@ -5,7 +5,6 @@ import java.util.Vector;
 
 public class customer extends user{
     static int IDCount = 0;
-    Vector<Payment>payments;
     Vector<Order> orders;
     cart mycart;
     customer(String Full_Name, String E_mail, String Phone,String Password) {
@@ -14,7 +13,6 @@ public class customer extends user{
         this.phone = Phone;
         this.password = Password;
         this.ID = ++IDCount;
-        payments = new Vector<Payment>();
         orders = new Vector<Order>();
         mycart = new cart();
     }
@@ -50,10 +48,6 @@ public class customer extends user{
         return orders;
     }
 
-    public Vector<Payment> getPayments() {
-        return payments;
-    }
-
     public void setOrders(Vector<Order> orders) {
         this.orders = orders;
     }
@@ -69,12 +63,6 @@ public class customer extends user{
             }
         }
     }
-
-
-    public void setPayments(Vector<Payment> payments) {
-        this.payments = payments;
-    }
-
     void Reorder(int orderID) {
         for (Order order : orders) {
             if (orderID == order.getID()) {
@@ -97,4 +85,3 @@ public class customer extends user{
     }
 
 }
-
