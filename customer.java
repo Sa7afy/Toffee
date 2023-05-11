@@ -40,7 +40,16 @@ public class customer extends user{
         this.payments = payments;
     }
 
-    
+        void Reorder(String orderID) {
+        for (Order order : orders) {
+            if (orderID == order.getID()) {
+                orders.add(order);
+                System.out.println(" reorder "+ orderID+" is Done\n");
+                return;
+            }
+        }
+        System.out.println("Order Not Found");
+    }
 
     void ShowData() {
         System.out.println("Name: " + this.FullName + " Email: " + this.Email + " Phone " + this.phone);
