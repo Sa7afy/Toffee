@@ -63,6 +63,16 @@ public class customer extends user{
         System.out.println("Order Not Found");
     }
 
+        void getOrder(int orderID ) {
+        for (Order order : orders) {
+            if (orderID == order.getID()) {
+                order.view();
+                return;
+            }
+        }
+        System.out.println("Order Not Found");
+    }
+    
     void ShowData() {
         System.out.println("Name:" + this.FullName + "\nEmail:" + this.Email + "\nPhone:" + this.phone);
     }
