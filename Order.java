@@ -1,25 +1,22 @@
 public class Order {
-    private String ID;
+    private static int order_ID = 0;
+    private int ID;
     private double price;
     private int order_status = 2, paid = 1, late = 0, pending = 2;
+
     public cart order_details;
 
-    public Order(String ID, double price, cart crt) {
-        this.ID = ID;
-        this.price = price;
+    public Order(cart crt) {
+        ID = ++order_ID;
         order_details = crt;
+        price = order_details.calculateTotal();
     }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
     public void setOrder_status(int order_status) {
         this.order_status = order_status;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public void update(cart crt) {
+        order_details = crt;
+        price = order_details.calculateTotal();
     }
 
     public double getPrice() {
@@ -30,19 +27,20 @@ public class Order {
         return order_status;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
     public void view() {
         System.out.println("ID:" + ID + "\nPrice:" + price + "\n");
         if (order_status == pending) {
-            System.out.println("Order status:pending\n");
+            System.out.println("Order status:pending");
         }
         else if (order_status == late) {
-            System.out.println("Order status:Late\n");
+            System.out.println("Order status:Late");
         } else {
-            System.out.println("Order status:Paid & shipped\n");
+            System.out.println("Order status:Paid & shipped");
         }
+        order_details.view();
     }
 }
