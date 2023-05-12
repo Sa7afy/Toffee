@@ -91,7 +91,14 @@ public class Main {
                 prod = toffee.catalog.search(ID);
                 int removed = toffee.curCustomer.mycart.remove(prod, quantity);
                 prod.quantity += removed;
-            } else break;
+            } else {
+                String filename = "src/products.txt";
+                toffee.clearfile(filename);
+                toffee.write_to_file(filename);
+                toffee.catalog.clearfile(filename);
+                toffee.catalog.write_to_file(filename);
+                break;
+            }
         }
     }
 }
