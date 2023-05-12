@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Vector;
 
@@ -51,6 +53,31 @@ public class Catalog {
         return new product("NULL", 0, 0);
     }
 
+    public void clearfile(String filename){
+        try {
+            FileWriter fileWriter = new FileWriter(filename, false);
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while clearing the file.");
+            e.printStackTrace();
+        }
+    }
+
+    public void write_to_file(String filename){
+        try {
+            FileWriter fileWriter = new FileWriter(filename);
+            for(product p : catalog){
+                fileWriter.write(p.ProductName+"\n");
+                fileWriter.write(p.ProductPrice+"\n");
+                fileWriter.write(p.quantity+"\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
+    }
+
     /**
      * View all catalog.
      */
@@ -61,6 +88,3 @@ public class Catalog {
 
     }
 }
-
-
-
