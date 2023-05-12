@@ -264,12 +264,8 @@ public class Toffee {
 
         customer c = new customer(FullName, Email, PhoneNumber, Pw);
         customers.add(c);
-        String file = "src/customer.txt";
-        clearfile(file);
-        write_to_file(file);
         System.out.println("registered successfully");
     }
 
 }
-
 
