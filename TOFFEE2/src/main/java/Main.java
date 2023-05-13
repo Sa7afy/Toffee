@@ -36,13 +36,12 @@ public class Main {
         while (true) {
             Scanner in2 = new Scanner(System.in);
             System.out.println("what do you want to do now...?");
-            System.out.println("""
+           System.out.println("""
                     1-Browse catalog
                     2-show Cart
                     3-checkout cart
-                    4-clear cart
-                    5-Remove item from the cart
-                    6-exit""");
+                    4-Remove item from the cart
+                    5-exit""");
             int op = in2.nextInt();
             if (op == 1) {
                 toffee.catalog.view();
