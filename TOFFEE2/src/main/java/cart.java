@@ -78,9 +78,7 @@ public class cart {
     /**
      * Clear all products in the cart.
      */
-    public void clear() {
-        products.clear();
-    }
+    public void clear() {products.clear();}
 
     /**
      * View all products int the cart.

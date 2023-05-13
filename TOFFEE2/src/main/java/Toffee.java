@@ -40,7 +40,7 @@ public class Toffee {
      */
     void ReadCustomers() {
         try {
-            File myObj = new File("src/main/java/customer.txt");
+            File myObj = new File("src/main/java/customers.txt");
             Scanner myReader = new Scanner(myObj);
             int ind = 1;
             String name = new String(), email = new String(), phone = new String(), pass = new String();
@@ -274,7 +274,12 @@ public class Toffee {
 
         customer c = new customer(FullName, Email, PhoneNumber, Pw);
         customers.add(c);
+        int new_elem = customers.size()+1;
+        System.out.println("Your ID is " + new_elem + ", You have to save it");
         System.out.println("registered successfully");
+        String filename = "src/main/java/customers.txt";
+        clearfile(filename);
+        write_to_file(filename);
     }
 
     public String SendOTP(String Email) {

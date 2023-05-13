@@ -15,7 +15,7 @@ public class Main {
         toffee.ReadProducts();
         toffee.ReadCustomers();
         System.out.println("welcome To Toffee Store");
-        System.out.println("Made by Yousef Abdalla Attia(20210475) and Mohand Magdy Ahmed(20210412) ");
+        System.out.println("Made by Yousef Abdalla Attia(20210475) and Mohand Magdy Ahmed(20210412)");
         Scanner in = new Scanner(System.in);
         int option = 0;
         while (toffee.curCustomer.ID == 1) {
@@ -75,8 +75,6 @@ public class Main {
                     toffee.curCustomer.check_out();
                 }
             } else if (op == 4) {
-                toffee.curCustomer.mycart.clear();
-            } else if (op == 5) {
                 toffee.curCustomer.mycart.view();
                 System.out.println("This is your items in the cart\n" +
                         "Please enter ID and quantity of item you want to delete");
@@ -91,12 +89,13 @@ public class Main {
                 prod = toffee.catalog.search(ID);
                 int removed = toffee.curCustomer.mycart.remove(prod, quantity);
                 prod.quantity += removed;
+                String filename1 = "src/main/java/products.txt";
+                toffee.catalog.clearfile(filename1);
+                toffee.catalog.write_to_file(filename1);
             } else {
-                String filename = "src/main/java/products.txt";
-                toffee.clearfile(filename);
-                toffee.write_to_file(filename);
-                toffee.catalog.clearfile(filename);
-                toffee.catalog.write_to_file(filename);
+                String filename1 = "src/main/java/products.txt";
+                toffee.catalog.clearfile(filename1);
+                toffee.catalog.write_to_file(filename1);
                 break;
             }
         }
