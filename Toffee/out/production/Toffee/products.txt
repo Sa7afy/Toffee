@@ -1,0 +1,30 @@
+pepsi
+5.55
+5
+cola
+6
+2
+Chocolate chips 
+2.99 
+5
+Ice cream
+4.99 
+6
+Cookies
+3.49 
+4
+Cake mix 
+1.99 
+20
+Marshmallows
+1.99
+50
+Frozen pie crust
+2.99
+10
+Pancake syrup
+3.49
+20
+Canned fruit 
+1.99
+6

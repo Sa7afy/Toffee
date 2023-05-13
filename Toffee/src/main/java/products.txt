@@ -1,0 +1,9 @@
+pepsi
+5.55
+5
+cola
+6
+2
+apple
+3
+20
