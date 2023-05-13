@@ -53,6 +53,11 @@ public class Catalog {
         return new product("NULL", 0, 0);
     }
 
+    /**
+     * function that clears the file to write again.
+     *
+     * @param filename the filename
+     */
     public void clearfile(String filename){
         try {
             FileWriter fileWriter = new FileWriter(filename, false);
@@ -63,6 +68,11 @@ public class Catalog {
         }
     }
 
+    /**
+     * Write to file.
+     *
+     * @param filename the filename
+     */
     public void write_to_file(String filename){
         try {
             FileWriter fileWriter = new FileWriter(filename);

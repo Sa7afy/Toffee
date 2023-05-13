@@ -8,6 +8,7 @@ import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Random;
+
 /**
  * The type Toffee.
  */
@@ -282,6 +283,12 @@ public class Toffee {
         write_to_file(filename);
     }
 
+    /**
+     * Send otp string.
+     *
+     * @param Email the email
+     * @return the string
+     */
     public String SendOTP(String Email) {
 
         GEmailSender gEmailSender = new GEmailSender();
@@ -298,6 +305,11 @@ public class Toffee {
         return otp;
     }
 
+    /**
+     * Otp generator string.
+     *
+     * @return the string
+     */
     public  String OTPGenerator(){
             Random random = new Random();
             StringBuilder otp = new StringBuilder();

@@ -81,7 +81,7 @@ public class cart {
     public void clear() {products.clear();}
 
     /**
-     * View all products int the cart.
+     * View all products in the cart.
      */
     public void view() {
         System.out.println("Cart:");

@@ -6,8 +6,20 @@ import jakarta.mail.internet.MimeMessage;
 
 import java.util.Properties;
 
+/**
+ * The type G email sender.
+ */
 public class GEmailSender {
 
+    /**
+     * Send email boolean.
+     *
+     * @param to      the to (receiver)
+     * @param from    the from (sender)
+     * @param subject the subject
+     * @param text    the text
+     * @return the boolean
+     */
     public boolean sendEmail(String to, String from, String subject, String text) {
         boolean flag = false;
 

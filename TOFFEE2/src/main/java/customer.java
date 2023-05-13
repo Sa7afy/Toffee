@@ -40,7 +40,6 @@ public class customer extends user{
 
     /**
      * Check out order and add it to the customer's orders.
-     *
      */
     public void check_out(){
         if(!mycart.empty()) {
